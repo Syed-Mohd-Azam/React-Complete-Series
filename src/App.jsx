@@ -3,6 +3,11 @@ import viteLogo from "/public/vite.svg";
 import "./App.css";
 
 function App() {
+  const handleNameChange = () => {
+    const names = ["Syed", "Mohd", "Azam"];
+    const int = Math.floor(Math.random() * 3);
+    return names[int];
+  };
   return (
     <>
       <div>
@@ -14,6 +19,7 @@ function App() {
         </a>
       </div>
       <h1> React Complete Series</h1>
+      <h1>Hello {handleNameChange()}</h1>
     </>
   );
 }
