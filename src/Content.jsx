@@ -4,10 +4,24 @@ const Content = () => {
     const int = Math.floor(Math.random() * 3);
     return names[int];
   };
+  const handleClick = () => {
+    console.log("You clicked it!");
+  };
+  const handleClickTwo = (name) => {
+    console.log(`${name} Clicked!`);
+  };
+  const handleClickThree = (event) => {
+    console.log(event.target);
+  };
   return (
     <>
       <main>
-        <p>Hello {handleNameChange()}</p>
+        <p>Hello {handleNameChange()}!</p>
+        <button onClick={handleClick}>Button One</button>
+        <button onClick={() => handleClickTwo(handleNameChange())}>
+          Button Two
+        </button>
+        <button onClick={(e) => handleClickThree(e)}>Button Three</button>
       </main>
     </>
   );
