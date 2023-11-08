@@ -4,7 +4,7 @@ const Content = () => {
     const int = Math.floor(Math.random() * 3);
     return names[int];
   };
-  const handleClick = () => {
+  const handleClickOne = () => {
     console.log("You clicked it!");
   };
   const handleClickTwo = (name) => {
@@ -17,7 +17,7 @@ const Content = () => {
     <>
       <main>
         <p>Hello {handleNameChange()}!</p>
-        <button onClick={handleClick}>Button One</button>
+        <button onClick={handleClickOne}>Button One</button>
         <button onClick={() => handleClickTwo(handleNameChange())}>
           Button Two
         </button>
