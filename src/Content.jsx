@@ -1,75 +1,57 @@
 import { useState } from "react";
+import { FaTrashAlt } from "react-icons/fa";
 const Content = () => {
-  const [name, setName] = useState("Syed");
-  const [count, setCount] = useState(0);
-  const handleNameChange = () => {
-    const names = ["Syed", "Mohd", "Azam"];
-    const int = Math.floor(Math.random() * 3);
-    setName(names[int]);
+  const [items, setItems] = useState([
+    {
+      id: 1,
+      checked: false,
+      item: "Coca Cola",
+    },
+    {
+      id: 2,
+      checked: false,
+      item: "Appy Fizz",
+    },
+    {
+      id: 3,
+      checked: false,
+      item: "Lemon Juice",
+    },
+  ]);
+  const handleCheck = (id) => {
+    const listItems = items.map((item) =>
+      item.id === id ? { ...items, checked: !item.checked } : item
+    );
+    setItems(listItems);
   };
-
-  const handleCountIncrease = () => {
-    setCount(count + 1);
-  };
-  const handleCountDecrease = () => {
-    setCount(count - 1);
-  };
-  const handleClickThree = (event) => {
-    console.log(event.target.innerText);
+  const handleDelete = (id) => {
+    const listItems = items.filter((item) => item.id !== id);
+    setItems(listItems);
   };
   return (
     <>
       <main>
-        <p>Hello {name}!</p>
-        <p>Count: {count}</p>
-        <button
-          onClick={handleNameChange}
-          style={{
-            padding: "5px",
-            color: "brown",
-            border: "1px solid black",
-            borderRadius: "5px",
-            backgroundColor: "white",
-          }}
-        >
-          Change Name
-        </button>
-        <button
-          onClick={handleCountIncrease}
-          style={{
-            padding: "5px",
-            color: "brown",
-            border: "1px solid black",
-            borderRadius: "5px",
-            backgroundColor: "white",
-          }}
-        >
-          Count Increase
-        </button>
-        <button
-          onClick={handleCountDecrease}
-          style={{
-            padding: "5px",
-            color: "brown",
-            border: "1px solid black",
-            borderRadius: "5px",
-            backgroundColor: "white",
-          }}
-        >
-          Count Decrease
-        </button>
-        <button
-          onClick={(e) => handleClickThree(e)}
-          style={{
-            padding: "5px",
-            color: "brown",
-            border: "1px solid black",
-            borderRadius: "5px",
-            backgroundColor: "white",
-          }}
-        >
-          Button Three
-        </button>
+        {items.length > 0 ? (
+          <ul>
+            {items.map((item) => (
+              <li className="item" key={item.id}>
+                <input
+                  type="checkbox"
+                  checked={item.checked}
+                  onChange={() => handleCheck(item.id)}
+                />
+                <label>{item.item}</label>
+                <FaTrashAlt
+                  role="button"
+                  tabIndex="0"
+                  onClick={() => handleDelete(item.id)}
+                />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <h1>List is Empty!</h1>
+        )}
       </main>
     </>
   );

@@ -46,3 +46,45 @@ main {
   align-items: center;
   gap: 1rem;
 }
+ul {
+  width: 100%;
+  list-style-type: none;
+  padding: 0.25rem;
+}
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: aliceblue;
+  margin-bottom: 0.4rem;
+}
+.item input[type="checkbox"] {
+  text-align: center;
+  min-width: 30px;
+  min-height: 30px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  max-width: 30px;
+  max-height: 30px;
+}
+.item label {
+  color: brown;
+  font-size: 1rem;
+  font-weight: bold;
+  flex-grow: 1;
+}
+.item svg {
+  font-size: 1rem;
+  color: red;
+  cursor: pointer;
+  min-width: 30px;
+  min-height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+}
+.item svg:focus,
+.item svg:hover {
+  color: steelblue;
+  outline: none;
+}
