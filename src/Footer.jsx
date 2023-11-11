@@ -1,9 +1,9 @@
-const Footer = () => {
-  const today = new Date();
+/* eslint-disable react/prop-types */
+const Footer = ({ length }) => {
   return (
     <>
       <footer>
-        <p>Copyright &copy; {today.getFullYear()}</p>
+        <p>{length} List Items</p>
       </footer>
     </>
   );
