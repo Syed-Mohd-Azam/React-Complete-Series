@@ -1,33 +1,7 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
 import { FaTrashAlt } from "react-icons/fa";
-const Content = () => {
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      checked: false,
-      item: "Coca Cola",
-    },
-    {
-      id: 2,
-      checked: false,
-      item: "Appy Fizz",
-    },
-    {
-      id: 3,
-      checked: false,
-      item: "Lemon Juice",
-    },
-  ]);
-  const handleCheck = (id) => {
-    const listItems = items.map((item) =>
-      item.id === id ? { ...items, checked: !item.checked } : item
-    );
-    setItems(listItems);
-  };
-  const handleDelete = (id) => {
-    const listItems = items.filter((item) => item.id !== id);
-    setItems(listItems);
-  };
+const Content = (props) => {
+  const { items, handleCheck, handleDelete } = props;
   return (
     <>
       <main>
