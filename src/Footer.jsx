@@ -4,7 +4,9 @@ const Footer = ({ length }) => {
     <>
       <footer>
         <p>
-          {length} List {length === 1 ? "item" : "items"}
+          {length > 0
+            ? `${length} List ${length === 1 ? "item" : "items"}`
+            : "No items in the List"}
         </p>
       </footer>
     </>
