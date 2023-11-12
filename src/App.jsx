@@ -22,9 +22,21 @@ function App() {
     },
   ]);
   const [newItem, setNewItem] = useState("");
+  const addItem = (item) => {
+    const id = items.length ? items[items.length - 1].id + 1 : 1;
+    const myNewItem = { id, checked: false, item };
+    const listItems = [...items, myNewItem];
+    setAndSaveItems(listItems);
+  };
   const setAndSaveItems = (newItems) => {
     setItems(newItems);
     localStorage.setItem("shoppinglist", JSON.stringify(newItems));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!newItem) return;
+    addItem(newItem);
+    setNewItem("");
   };
   const handleCheck = (id) => {
     const listItems = items.map((item) =>
@@ -36,18 +48,7 @@ function App() {
     const listItems = items.filter((item) => item.id !== id);
     setAndSaveItems(listItems);
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!newItem) return;
-    addItem(newItem);
-    setNewItem("");
-  };
-  const addItem = (item) => {
-    const id = items.length ? items[items.length - 1].id + 1 : 1;
-    const myNewItem = { id, checked: false, item: { item } };
-    const listItems = [...items, myNewItem];
-    setAndSaveItems(listItems);
-  };
+
   return (
     <>
       <div className="App">
