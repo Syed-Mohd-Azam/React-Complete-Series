@@ -4,23 +4,9 @@ import AddItem from "./AddItem";
 import Footer from "./Footer";
 import { useState } from "react";
 function App() {
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      checked: false,
-      item: "Coca Cola",
-    },
-    {
-      id: 2,
-      checked: false,
-      item: "Appy Fizz",
-    },
-    {
-      id: 3,
-      checked: false,
-      item: "Lemon Juice",
-    },
-  ]);
+  const [items, setItems] = useState(
+    JSON.parse(localStorage.getItem("shoppinglist"))
+  );
   const [newItem, setNewItem] = useState("");
   const addItem = (item) => {
     const id = items.length ? items[items.length - 1].id + 1 : 1;
