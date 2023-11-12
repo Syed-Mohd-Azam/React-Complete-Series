@@ -88,3 +88,31 @@ ul {
   color: steelblue;
   outline: none;
 }
+.addForm {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+.addForm label {
+  position: absolute;
+  left: -99999999px;
+}
+
+.addForm input[type="text"] {
+  flex-grow: 1;
+  min-height: 48px;
+  border-radius: 0.25rem;
+  outline: none;
+  border: 1px solid black;
+  font-size: 1rem;
+  padding: 0.25rem 1rem;
+}
+.formButton {
+  height: 48px;
+  min-width: 48px;
+  background-color: whitesmoke;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+}
