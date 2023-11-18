@@ -108,6 +108,7 @@ ul {
   border: 1px solid black;
   font-size: 1rem;
   padding: 0.25rem 1rem;
+  letter-spacing: 1px;
 }
 .formButton {
   height: 48px;
@@ -115,4 +116,28 @@ ul {
   background-color: whitesmoke;
   border-radius: 0.25rem;
   font-size: 0.75rem;
+}
+.searchForm {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  border: none;
+  margin: 0.25rem 0;
+  padding: 0.3rem;
+}
+.searchForm label {
+  position: absolute;
+  left: -9999999px;
+}
+.searchForm input[type="search"] {
+  max-width: 100%;
+  flex-grow: 1;
+  min-height: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.9rem;
+  padding: 1rem;
+  letter-spacing: 1px;
 }

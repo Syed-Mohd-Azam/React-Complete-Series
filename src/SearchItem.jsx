@@ -2,17 +2,17 @@
 const SearchItem = ({ search, setSearch }) => {
   return (
     <>
-      <div className="searchForm">
+      <form className="searchForm">
         <label htmlFor="search">Search</label>
         <input
-          type="text"
+          type="search"
           id="search"
           placeholder="Search Items"
           role="searchbox"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-      </div>
+      </form>
     </>
   );
 };
