@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "checked": false,
+      "item": "Grilled Chicken"
+    },
+    {
+      "id": 2,
+      "checked": false,
+      "item": "Fried Fish"
+    },
+    {
+      "id": 3,
+      "checked": false,
+      "item": "Ice Cream"
+    }
+  ]
+}
